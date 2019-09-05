@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="searchApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Search Storage Maintenance</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<section data-ng-controller="SearchController">
+
+	<div class="top-bar">
+		<p>Service: 800-940-5585 | Sales: 844-734-6833</p>
+	</div>
+
+	<div class="logo">
+		<a href="https://www.serviceexpress.com"><img src="logo.jpg" alt="Service Express Logo" height="100"></a>
+	</div>
+
+	<div class="copy">
+		<h2>Are You Compromising on Your Storage Maintenance?</h2>
+		<hr>
+		<p>Monitoring and maintaining your storage footprint is a full-time job. Add to it the need to utilize legacy, multivendor or multiplatform solutions and you’re facing a daunting task. With all that on your plate, your data center storage solutions provider should offer support that is effective and easy to access, leaving you and your teams free to focus on other critical tasks and issues.</p>
+	</div>
+	
+	<div class="search-box">
+		<h1>Search Our Storage Maintenance Providers</h1>
+		<input type="text" ng-model="searchString" placeholder="start typing" />
+	</div>	
+	<ul>
+		<li ng-repeat="i in items | filter:searchString">
+			<a href="{{i.url}}"><img ng-src="{{i.image}}" /></a>
+			<p>{{i.title}}</p>
+		</li>
+	</ul>
+
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script src="script.js"></script>
+<script src="app.module.js"></script>
+
+
+</body>
+</html>
